@@ -1,5 +1,6 @@
 import { ArticleCard } from '@components/ArticleCard';
 import type { Article } from 'src/types';
+import styles from './Feed.module.css';
 
 interface FeedProps {
   data: Article[];
@@ -7,7 +8,7 @@ interface FeedProps {
 
 export function Feed ({ data }: FeedProps) {
   return (
-    <div>
+    <div className={styles['feed']}>
       {data.map((entry) => (
         <ArticleCard key={entry.url} {...entry}></ArticleCard>
       ))}

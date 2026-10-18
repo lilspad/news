@@ -2,6 +2,7 @@
   background: var(--color-surface);
   border: var(--border);
   border-radius: var(--radius-card);
+  flex: 1 0 320px;
   padding: var(--space-4);
   position: relative;
 

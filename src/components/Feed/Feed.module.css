@@ -1,0 +1,10 @@
+.feed {
+    align-items: flex-start;
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+    margin: 0 auto;
+    max-width: 1082px;
+    padding: var(--space-6);
+}
