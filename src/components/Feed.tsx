@@ -1,10 +1,11 @@
-import ArticleCard, { type ArticleCardProps } from '@components/ArticleCard';
+import { ArticleCard } from '@components/ArticleCard';
+import type { Article } from 'src/types';
 
 interface FeedProps {
-  data: ArticleCardProps[];
+  data: Article[];
 }
 
-function Feed ({ data }: FeedProps) {
+export function Feed ({ data }: FeedProps) {
   return (
     <div>
       {data.map((entry) => (
@@ -13,5 +14,3 @@ function Feed ({ data }: FeedProps) {
     </div>
   );
 }
-
-export default Feed;

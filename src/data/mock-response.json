@@ -5,46 +5,45 @@
       "id": "f8f18e4b-c66e-47ca-9f7d-54f03e431a77",
       "title": "Chipmaker expands data-center investment",
       "description": "The company announced a multi-year plan to build three new facilities across Europe, citing surging demand for AI processing capacity. Construction is expected to begin next quarter.",
-      "url": "https://example.com/business/chipmaker-expands",
+      "url": "https://www.reuters.com/technology/chipmaker-expands-data-center-investment-2026-03-24/",
       "author": "Editorial Desk",
       "image": "https://picsum.photos/seed/chipmaker/600/400",
       "language": "en",
       "category": ["science_technology", "economy_business_finance"],
-      "published": "2026-03-24 11:10:00 +0000"
+      "published": "2026-10-18 11:10:00 +0000"
     },
     {
       "id": "3b1d9c22-4e7a-41f8-9a0e-7c2f6b8d4e15",
       "title": "City council approves expanded cycling network",
       "description": "A new set of protected bike lanes will connect the city centre to three outer neighbourhoods, part of a wider push to cut car journeys over the next decade.",
-      "url": "https://example.com/local/cycling-network-approved",
+      "url": "https://www.theguardian.com/uk-news/2026/mar/24/city-council-approves-expanded-cycling-network",
       "author": "Maria Lenton",
       "image": "https://picsum.photos/seed/cycling/600/400",
       "language": "en",
       "category": ["environment", "politics"],
-      "published": "2026-03-24 09:45:00 +0000"
+      "published": "2026-10-18 09:45:00 +0000"
     },
     {
       "id": "a7e4f810-25bb-4c93-8f6d-1e9a3c05d772",
       "title": "Researchers report breakthrough in battery lifespan",
       "description": "A university team says a new electrode design could extend electric vehicle battery life by up to 40 percent, though the work has yet to be tested at commercial scale.",
-      "url": "https://example.com/science/battery-lifespan-breakthrough",
+      "url": "https://www.bbc.co.uk/news/science-environment-68612345",
       "author": "None",
       "image": "None",
       "language": "en",
       "category": ["science_technology"],
-      "published": "2026-03-23 18:20:00 +0000"
+      "published": "2026-10-18 18:20:00 +0000"
     },
     {
       "id": "c9201f3d-6a88-4b17-bf2c-04d7e8a91b63",
       "title": "National team secures spot in final after late winner",
       "description": "A stoppage-time goal sent the side through to the final, sparking celebrations among travelling fans. The match had been goalless until the closing minutes.",
-      "url": "https://example.com/sport/national-team-reaches-final",
+      "url": "https://news.sky.com/story/national-team-secures-spot-in-final-after-late-winner-13098765",
       "author": "Sports Desk",
       "image": "https://picsum.photos/seed/football/600/400",
       "language": "en",
       "category": ["sport"],
-      "published": "2026-03-23 21:05:00 +0000"
+      "published": "2026-10-18 21:05:00 +0000"
     }
-  ],
-  "page": 1
+  ]
 }

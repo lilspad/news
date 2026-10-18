@@ -1,7 +1,8 @@
-import Feed from '@components/Feed';
+import { Feed } from '@components/Feed';
+import { mapArticles } from '@services/mapArticle';
 import mockResponse from 'src/data/mock-response.json';
 
-const data = mockResponse.news;
+const data = mapArticles(mockResponse.news);
 
 function App() {
   return (
