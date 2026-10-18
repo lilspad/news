@@ -1,0 +1,26 @@
+/* Breakpoint reference */
+  /* sm: 40em;  (640px) */
+  /* md: 48em;  (768px) */
+  /* lg: 64em;  (1024px) */
+
+:root {
+  --padding-small: var(--space-2);   /* 8px  */
+  --padding-medium: var(--space-4);  /* 16px */
+  --padding-large: var(--space-6);   /* 24px */
+}
+
+@media (min-width: 48em) {
+  :root {
+    --padding-small: var(--space-3);   /* 12px */
+    --padding-medium: var(--space-6);  /* 24px */
+    --padding-large: var(--space-12);  /* 48px */
+  }
+}
+
+@media (min-width: 64em) {
+  :root {
+    --padding-small: var(--space-4);   /* 16px */
+    --padding-medium: var(--space-8);  /* 32px */
+    --padding-large: var(--space-16);  /* 64px */
+  }
+}

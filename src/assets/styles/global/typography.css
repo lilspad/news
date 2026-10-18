@@ -1,0 +1,42 @@
+body,
+.type-body {
+  color: var(--color-text-muted);
+  font:
+    var(--type-body-weight)
+    var(--type-body-size)/var(--type-body-line-height)
+    var(--type-body-family);
+}
+
+h1,
+.type-display {
+  color: var(--color-text);
+  font:
+    var(--type-display-weight)
+    var(--type-display-size)/var(--type-display-line-height)
+    var(--type-display-family);
+}
+
+h2,
+.type-headline {
+  color: var(--color-text);
+  font:
+    var(--type-headline-weight)
+    var(--type-headline-size)/var(--type-headline-line-height)
+    var(--type-headline-family);
+}
+
+button,
+.button {
+  font:
+    var(--type-button-weight)
+    var(--type-button-size)/var(--type-button-line-height)
+    var(--type-button-family);
+}
+
+.type-meta {
+  color: var(--color-text-muted);
+  font:
+    var(--type-meta-weight)
+    var(--type-meta-size)/var(--type-meta-line-height)
+    var(--type-meta-family);
+}

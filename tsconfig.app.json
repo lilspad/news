@@ -25,7 +25,10 @@
     /* Path aliases */
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"]
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@icons/*": ["src/components/icons/*"],
+      "@styles/*": ["src/assets/styles/*"]
     }
   },
   "include": ["src"]
