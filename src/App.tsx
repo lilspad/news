@@ -8,7 +8,7 @@ function App() {
     <div>
       <Feed data={data}></Feed>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -4,7 +4,7 @@ interface ArticleCardProps {
   url: string;
 }
 
-function ArticleCard ({ title, description, url}: ArticleCardProps) {
+function ArticleCard ({ title, description, url }: ArticleCardProps) {
   return (
     <article>
       <h2>{title}</h2>
@@ -13,7 +13,7 @@ function ArticleCard ({ title, description, url}: ArticleCardProps) {
         Read more
       </a>
     </article>
-  )
+  );
 }
 
 export default ArticleCard;

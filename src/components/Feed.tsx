@@ -1,4 +1,4 @@
-import ArticleCard, {type ArticleCardProps} from '@components/ArticleCard';
+import ArticleCard, { type ArticleCardProps } from '@components/ArticleCard';
 
 interface FeedProps {
   data: ArticleCardProps[];
@@ -7,11 +7,11 @@ interface FeedProps {
 function Feed ({ data }: FeedProps) {
   return (
     <div>
-        {data.map((entry) => (
-            <ArticleCard key={entry.url} {...entry}></ArticleCard>
-        ))}
+      {data.map((entry) => (
+        <ArticleCard key={entry.url} {...entry}></ArticleCard>
+      ))}
     </div>
-  )
+  );
 }
 
-export default Feed
+export default Feed;
