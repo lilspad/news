@@ -9,3 +9,5 @@ export interface Article {
   category: string[];
   publishedAt: Date;
 }
+
+export type Status = 'loading' | 'error' | 'ready';

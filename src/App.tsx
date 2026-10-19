@@ -1,13 +1,11 @@
 import { Feed } from '@components/Feed';
-import { mapArticles } from '@services/mapArticle';
-import mockResponse from 'src/data/mock-response.json';
-
-const data = mapArticles(mockResponse.news);
+import { useFetchArticles } from './hooks/useFetchArticles';
 
 function App() {
+  const { articles, status } = useFetchArticles();
   return (
     <div>
-      <Feed data={data}></Feed>
+      <Feed status={status} data={articles}></Feed>
     </div>
   );
 }
