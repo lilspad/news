@@ -1,12 +1,19 @@
 import { useEffect, useState } from 'react';
-import type { Article, Status } from '@/types';
+import type { Article, CurrentsArticle, Status } from '@/types';
 import { mapArticles } from '@/services/mapArticle';
-import mockResponse from '@data/mock-response.json';
 
-function fakeFetch(): Promise<Article[]> {
-  return new Promise((resolve) =>
-    setTimeout(() => resolve(mapArticles(mockResponse.news)), 5000)
-  );
+async function fetchArticles() {
+  const res = await fetch('/api/news', {
+    headers: {
+      'Authorization': 'YOUR_API_KEY'
+    }
+  });
+  if (!res.ok) {
+    throw new Error(`Request failed: ${res.status}`);
+  }
+
+  const data: { news: CurrentsArticle[] } = await res.json();
+  return mapArticles(data.news);
 }
 
 export function useFetchArticles() {
@@ -14,7 +21,7 @@ export function useFetchArticles() {
   const [status, setStatus] = useState<Status>('loading');
 
   useEffect(() => {
-    fakeFetch()
+    fetchArticles()
       .then((data) => {
         setArticles(data);
         setStatus('ready');

@@ -1,18 +1,6 @@
 import { parsePublished } from './parsePublished';
 import { getSourceName } from './getSourceName';
-import type { Article } from 'src/types';
-
-interface CurrentsArticle {
-  id: string;
-  title: string;
-  description: string;
-  url: string;
-  author: string;
-  image: string;
-  language: string;
-  category: string[];
-  published: string;
-}
+import type { Article, CurrentsArticle } from 'src/types';
 
 function cleanNone(value: string): string | null {
   return !value || value === 'None' ? null : value;

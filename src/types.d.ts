@@ -10,4 +10,16 @@ export interface Article {
   publishedAt: Date;
 }
 
+export interface CurrentsArticle {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  author: string;
+  image: string;
+  language: string;
+  category: string[];
+  published: string;
+}
+
 export type Status = 'loading' | 'error' | 'ready';
