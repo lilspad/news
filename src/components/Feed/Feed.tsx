@@ -1,4 +1,4 @@
-import { ArticleCard } from '@components/ArticleCard';
+import { ArticleCard, SkeletonCard } from '@components/ArticleCard';
 import type { Article, Status } from 'src/types';
 import styles from './Feed.module.css';
 import { Newsletter } from '@icons/Newsletter';
@@ -21,17 +21,24 @@ export function Feed ({ data, status }: FeedProps) {
   }
   if ( status === 'loading' ) {
     return (
-      <div className={styles['feed']}>
-        {Array.from({ length: 6 }).map((_, i) => (
-          <ArticleCard key={i} status={status}></ArticleCard>
-        ))}
-      </div>
+      <>
+        <div className={styles['feed']}>
+          {Array.from({ length: 6 }).map((_, i) => (
+            <SkeletonCard key={i}></SkeletonCard>
+          ))}
+        </div>
+        <div className={styles['feed']}>
+          {data.map((entry) => (
+            <ArticleCard key={entry.id} {...entry}></ArticleCard>
+          ))}
+        </div>
+      </>
     );}
 
   return (
     <div className={styles['feed']}>
       {data.map((entry) => (
-        <ArticleCard key={entry.id} status={status} article={entry}></ArticleCard>
+        <ArticleCard key={entry.id} {...entry}></ArticleCard>
       ))}
     </div>
   );

@@ -1,4 +1,5 @@
-.article-card {
+.article-card,
+.skeleton-card {
   background: var(--color-surface);
   border: var(--border);
   border-radius: var(--radius-card);
@@ -11,23 +12,34 @@
   }
 }
 
-.article-card--loading {
+.skeleton-card {
   span {
     animation: shimmer 1.5s infinite;
     background: linear-gradient(
       100deg,
       var(--color-border) 20%,
-      #B8AFA1 40%,
-      #B8AFA1 60%,
+      var(--palette-dark-text-muted) 40%,
+      var(--palette-dark-text-muted) 60%,
       var(--color-border) 80%
     );
     background-size: 400px 100%;
+    display: block;
     height: var(--type-body-size);
+    margin: var(--space-2) 0;
     min-width: 20px;
+  }
+
+  .skeleton-card--source {
+    width: 40px;
+  }
+
+  .skeleton-card--heading {
+    height: var(--type-headline-size);
   }
 }
 
-.article-card--body {
+.article-card--body,
+.skeleton-card--body {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -49,7 +61,8 @@
   position: absolute;
 }
 
-.article-card--meta {
+.article-card--meta,
+.skeleton-card--meta {
   align-items: center;
   align-self: stretch;
   display: flex;
@@ -81,7 +94,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .article-card--loading {
+  .skeleton-card {
     animation: none;
     background: var(--color-border);
   }

@@ -1,36 +1,15 @@
 import styles from './ArticleCard.module.css';
 import OpenInNew from '@components/icons/OpenInNew';
 import { formatTimestamp } from '@services/formatTimestamp';
-import type { Article, Status } from '@/types';
-
-type CardProps = {
-  article?: Article;
-  status: Status;
-};
+import type { Article } from '@/types';
 
 export function ArticleCard ({
-  article,
-  status
-}: CardProps) {
-  if (status === 'loading') {
-    return (
-      <article className={`${styles['article-card']} ${styles['article-card--loading']}`}>
-        <div className={styles['article-card--body']}>
-          <div className={styles['article-card--meta']}>
-            <span> </span>
-            <span> </span>
-          </div>
-          <span> </span>
-          <br />
-          <span></span>
-          <span></span>
-        </div>
-      </article>
-    );
-  }
-
-  const { title, description, url, source, publishedAt } = article;
-
+  title,
+  description,
+  url,
+  source,
+  publishedAt
+}: Article) {
   return (
     <article className={styles['article-card']}>
       <div className={styles['article-card--body']}>
