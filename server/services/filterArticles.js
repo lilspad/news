@@ -16,10 +16,7 @@ function isNull(value) {
 
 function hasContent(article) {
   const requiredFields = ['title', 'description'];
-  requiredFields.forEach(field => {
-    if (isNull(article[field])) return false;
-  });
-  return true;
+  return requiredFields.every((field) => !isNull(article[field]));
 }
 
 function isAllowedSource(article) {
