@@ -1,4 +1,3 @@
-// Feed.test.tsx
 import { render, screen } from '@testing-library/react';
 import { Feed } from '@components/Feed';
 
