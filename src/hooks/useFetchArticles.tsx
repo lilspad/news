@@ -16,6 +16,14 @@ async function fetchArticles() {
   return mapArticles(articles);
 }
 
+/**
+ * Fetch the articles and track the request's status.
+ * 
+ * Initial state is set to 'loading' and updated to 'ready'
+ * on success and 'error' on failure.
+ * 
+ * @returns Article[] and Status
+ */
 export function useFetchArticles() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [status, setStatus] = useState<Status>('loading');

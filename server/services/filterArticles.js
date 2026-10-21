@@ -23,6 +23,15 @@ function isAllowedSource(article) {
   return ALLOWED.has(getSource(article.url));
 }
 
+/**
+ * Filter raw API articles to trustworthy sources.
+ *
+ * Drops articles missing a title or description (including the "None"
+ * placeholder), drops any from a source not in the allowlist.
+ *
+ * @param {object[]} articles - Raw article objects from the API response.
+ * @returns {object[]} The articles that passed every check.
+ */
 export function filterArticles(articles) {
   return articles.filter(article => {
     if (!hasContent(article)) return false;
