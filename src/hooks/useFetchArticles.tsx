@@ -12,8 +12,8 @@ async function fetchArticles() {
     throw new Error(`Request failed: ${res.status}`);
   }
 
-  const data: { news: CurrentsArticle[] } = await res.json();
-  return mapArticles(data.news);
+  const articles: CurrentsArticle[] = await res.json();
+  return mapArticles(articles);
 }
 
 export function useFetchArticles() {
@@ -22,8 +22,8 @@ export function useFetchArticles() {
 
   useEffect(() => {
     fetchArticles()
-      .then((data) => {
-        setArticles(data);
+      .then((articles) => {
+        setArticles(articles);
         setStatus('ready');
       })
       .catch(() => setStatus('error'));
