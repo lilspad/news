@@ -18,13 +18,16 @@
   span {
     animation: shimmer 1.5s infinite;
     background: linear-gradient(
-      100deg,
-      var(--color-border) 20%,
-      var(--palette-dark-text-muted) 40%,
-      var(--palette-dark-text-muted) 60%,
-      var(--color-border) 80%
+      90deg,
+      var(--palette-light-secondary-background) 58%,
+      #c7c7c7 59%,
+      #c7c7c7 60%,
+      #c7c7c7 98%,
+      var(--palette-light-secondary-background) 99%,
+      var(--palette-light-secondary-background) 100%
     );
     background-size: 400px 100%;
+    border: 1px solid var(--palette-light-secondary-background);
     display: block;
     height: var(--type-body-size);
     margin: var(--space-2) 0;
@@ -112,9 +115,9 @@
 }
 
 @keyframes shimmer {
-  0% { background-position: 370px 0; }
-  40% { background-position: 300px 0; }
-  100% { background-position: 370px 0;}
+  0% { background-position: 490px 0; }
+  40% { background-position: 470px 0; }
+  100% { background-position: 490px 0;}
 }
 
 @media (prefers-reduced-motion: reduce) {

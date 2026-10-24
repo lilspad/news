@@ -1,22 +1,23 @@
-/* Current / Primitives */
 :root {
   /* Base */
   /* color */
-  --palette-dark-accent: #ef917d;
-  --palette-dark-background: #201e1a;
-  --palette-dark-border: #4c463e;
-  --palette-dark-surface: #2a2722;
-  --palette-dark-text: #f1e9db;
-  --palette-dark-text-muted: #b8afa1;
-  --palette-light-accent: #b43b27;
-  --palette-light-background: #f7f3ea;
-  --palette-light-border: #d8d0c2;
-  --palette-light-surface: #fffdf8;
-  --palette-light-text: #25241f;
-  --palette-light-text-muted: #6d685e;
+  --palette-dark-accent: #FF6363FF;
+  --palette-dark-background: #212121FF;
+  --palette-dark-border: #DCDCDCFF;
+  --palette-dark-secondary-background: #363636FF;
+  --palette-dark-surface: #212121FF;
+  --palette-dark-text: #FFFFFFFF;
+  --palette-dark-text-muted: #DCDCDCFF;
+  --palette-light-accent: #B70000FF;
+  --palette-light-background: #FEFEFEFF;
+  --palette-light-border: #363636FF;
+  --palette-light-secondary-background: #DCDCDCFF;
+  --palette-light-surface: #FEFEFEFF;
+  --palette-light-text: #000000FF;
+  --palette-light-text-muted: #363636FF;
   /* outline */
   --border-width: 1px;
-  --radius-card: 0px;
+  --radius-card: 2px;
   /* space */
   --space-0: 0px;
   --space-1: 4px;
@@ -29,25 +30,26 @@
   --space-14: 56px;
   --space-16: 62px;
   /* type */
-  --type-body-family: Inter, Roboto, Helvetica, sans-serif;
+  --type-body-family: "Courier New";
   --type-body-line-height: 24px;
   --type-body-size: 16px;
   --type-body-weight: 400;
-  --type-button-family: Inter, Roboto, Helvetica, san-serif;
+  --type-button-family: "Courier New";
   --type-button-line-height: 20px;
   --type-button-size: 14px;
   --type-button-weight: 600;
-  --type-display-family: "Libre Baskerville", Georgia, 'Times New Roman', serif;
+  --type-display-family: "Bodoni 72 Oldstyle";
   --type-display-line-height: 40px;
   --type-display-size: 32px;
   --type-display-weight: 700;
-  --type-headline-family: "Libre Baskerville", Georgia, 'Times New Roman', serif;
+  --type-headline-family: "Bodoni 72 Oldstyle";
   --type-headline-line-height: 32px;
   --type-headline-size: 24px;
   --type-headline-weight: 400;
-  --type-meta-family: Inter, Roboto, Helvetica, san-serif;
+  --type-meta-family: "Courier New";
   --type-meta-line-height: 16px;
   --type-meta-size: 12px;
+  --type-meta-weight-light: 500;
   --type-meta-weight: 600;
   /* misc */
   --shadow-card: none;
@@ -56,12 +58,12 @@
 :root {
   /* Light */
   /* color */
-  --color-accent: var(--palette-light-accent, #b43b27);
-  --color-background: var(--palette-light-background, #f7f3ea);
-  --color-border: var(--palette-light-border, #d8d0c2);
-  --color-surface: var(--palette-light-surface, #fffdf8);
-  --color-text: var(--palette-light-text, #25241f);
-  --color-text-muted: var(--palette-light-text-muted, #6d685e);
+  --color-accent: var(--palette-light-accent);
+  --color-background: var(--palette-light-background);
+  --color-border: var(--palette-light-border);
+  --color-surface: var(--palette-light-surface);
+  --color-text: var(--palette-light-text);
+  --color-text-muted: var(--palette-light-text-muted);
 }
 /* Dark */
 /* Follow the OS setting when the user hasn't chosen explicitly */
