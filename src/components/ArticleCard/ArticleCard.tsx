@@ -8,17 +8,25 @@ export function ArticleCard ({
   description,
   url,
   source,
-  publishedAt
+  publishedAt,
+  category
 }: Article) {
   return (
     <article className={styles['article-card']}>
       <div className={styles['article-card--body']}>
-        <div className={styles['article-card--meta']}>
-          <span className={styles['article-card--source']}>{source}</span>
-          <span className={styles['article-card--time-icon']}><time>{formatTimestamp(publishedAt)}</time><OpenInNew /></span>
+        <div>
+          <span className={styles['article-card--category']}>
+            {category.length > 0 && category}
+          </span>
         </div>
         <h2><a href={url} className={styles['article-card--link']}>{title}</a></h2>
         <p>{description}</p>
+        <div className={styles['article-card--meta']}>
+          <span className={styles['article-card--time']}>
+            <time>{formatTimestamp(publishedAt)}</time>
+          </span>
+          <span className={styles['article-card--source']}>{source}<OpenInNew /></span>
+        </div>
       </div>
     </article>
   );
