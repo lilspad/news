@@ -1,0 +1,4 @@
+.header {
+  border-bottom: var(--border);
+  padding: var(--padding-medium);
+}
