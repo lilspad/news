@@ -1,5 +1,6 @@
 @import "./global/tokens.css";
 
+@import "./global/colors.css";
 @import "./global/outline.css";
 @import "./global/spacing.css";
 @import "./global/typography.css";
@@ -56,4 +57,8 @@ h6 {
 body {
   background: var(--color-background);
   padding: 0 var(--padding-large);
+}
+
+main {
+  min-height: 71vh;
 }

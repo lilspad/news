@@ -1,0 +1,32 @@
+/* Light */
+:root {
+  /* Light */
+  /* color */
+  --color-accent: var(--palette-light-accent);
+  --color-background: var(--palette-light-background);
+  --color-border: var(--palette-light-border);
+  --color-surface: var(--palette-light-surface);
+  --color-text: var(--palette-light-text);
+  --color-text-muted: var(--palette-light-text-muted);
+}
+/* Dark */
+/* Follow the OS setting when the user hasn't chosen explicitly */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-accent: var(--palette-dark-accent);
+    --color-background: var(--palette-dark-background);
+    --color-border: var(--palette-dark-border);
+    --color-surface: var(--palette-dark-surface);
+    --color-text: var(--palette-dark-text);
+    --color-text-muted: var(--palette-dark-text-muted);
+  }
+}
+/* Explicit override */
+:root[data-theme="dark"] {
+  --color-accent: var(--palette-dark-accent);
+  --color-background: var(--palette-dark-background);
+  --color-border: var(--palette-dark-border);
+  --color-surface: var(--palette-dark-surface);
+  --color-text: var(--palette-dark-text);
+  --color-text-muted: var(--palette-dark-text-muted);
+}
