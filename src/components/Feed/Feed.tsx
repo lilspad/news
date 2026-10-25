@@ -9,13 +9,23 @@ interface FeedProps {
 }
 
 export function Feed ({ data, status }: FeedProps) {
-  if (status === 'error') {
+  if (data.length === 0) {
     return (
       <div className={styles['feed--error']}>
         <div className={styles['feed--icon']}>
           <Newsletter />
         </div>
         <h2>No articles found</h2>
+      </div>
+    );
+  }
+  if (status === 'error' || data.length === 0) {
+    return (
+      <div className={styles['feed--error']}>
+        <div className={styles['feed--icon']}>
+          <Newsletter />
+        </div>
+        <h2>Something went wrong.</h2>
       </div>
     );
   }
