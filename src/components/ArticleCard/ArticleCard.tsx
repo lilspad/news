@@ -16,7 +16,7 @@ export function ArticleCard ({
       <div className={styles['article-card--body']}>
         <div>
           <span className={styles['article-card--category']}>
-            {category.length > 0 && category}
+            {category.length > 0 && category.join('︱')}
           </span>
         </div>
         <h2><a href={url} className={styles['article-card--link']}>{title}</a></h2>

@@ -31,24 +31,24 @@
   --space-16: 62px;
   /* type */
   --type-body-family: "Courier New";
-  --type-body-line-height: 24px;
-  --type-body-size: 16px;
+  --type-body-line-height: 20px;
+  --type-body-size: 14px;
   --type-body-weight: 400;
   --type-button-family: "Courier New";
-  --type-button-line-height: 20px;
-  --type-button-size: 14px;
+  --type-button-line-height: 18px;
+  --type-button-size: 12px;
   --type-button-weight: 600;
   --type-display-family: "Bodoni 72 Oldstyle";
-  --type-display-line-height: 40px;
-  --type-display-size: 32px;
+  --type-display-line-height: 32px;
+  --type-display-size: 24px;
   --type-display-weight: 700;
   --type-headline-family: "Bodoni 72 Oldstyle";
-  --type-headline-line-height: 32px;
-  --type-headline-size: 24px;
+  --type-headline-line-height: 28px;
+  --type-headline-size: 20px;
   --type-headline-weight: 400;
   --type-meta-family: "Courier New";
   --type-meta-line-height: 16px;
-  --type-meta-size: 12px;
+  --type-meta-size: 10px;
   --type-meta-weight-light: 500;
   --type-meta-weight: 600;
   /* misc */

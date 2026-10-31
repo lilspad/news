@@ -40,3 +40,25 @@ button,
     var(--type-meta-size)/var(--type-meta-line-height)
     var(--type-meta-family);
 }
+
+@media (min-width: 48em) {
+  :root {
+    --type-button-line-height: 20px;
+    --type-button-size: 14px;
+    --type-display-line-height: 36px;
+    --type-display-size: 28px;
+  }
+}
+
+@media (min-width: 64em) {
+  :root {
+    --type-body-line-height: 24px;
+    --type-body-size: 16px;
+    --type-display-line-height: 40px;
+    --type-display-size: 32px;
+    --type-headline-line-height: 32px;
+    --type-headline-size: 24px;
+    --type-meta-line-height: 16px;
+    --type-meta-size: 12px;
+  }
+}
