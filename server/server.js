@@ -1,5 +1,9 @@
 import express from 'express';
+import 'dotenv/config';
+import { connectDB } from './db.js';
 import { filterArticles } from './services/filterArticles.js';
+
+await connectDB();
 
 const PORT = 3001;
 

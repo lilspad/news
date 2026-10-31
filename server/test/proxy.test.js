@@ -1,7 +1,7 @@
 // @vitest-environment node
 import { describe, it, expect, afterEach } from 'vitest';
 import request from 'supertest';
-import { createApp } from '../proxy.js';
+import { createApp } from '../server.js';
 
 const app = createApp();
 
