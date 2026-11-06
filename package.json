@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "proxy": "node --env-file=.env server/server.js"
+    "proxy": "node --env-file=server/.env server/server.js"
   },
   "dependencies": {
     "dotenv": "^18.0.9",

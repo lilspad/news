@@ -2,11 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Article, Status } from '@/types';
 
 async function fetchArticles() {
-  const res = await fetch('/api/news', {
-    headers: {
-      'Authorization': 'YOUR_API_KEY'
-    }
-  });
+  const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/news`);
   if (!res.ok) {
     throw new Error(`Request failed: ${res.status}`);
   }
