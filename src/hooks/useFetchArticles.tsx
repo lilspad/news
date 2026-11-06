@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { Article, CurrentsArticle, Status } from '@/types';
-import { mapArticles } from '@/services/mapArticle';
+import type { Article, Status } from '@/types';
 
 async function fetchArticles() {
   const res = await fetch('/api/news', {
@@ -12,8 +11,8 @@ async function fetchArticles() {
     throw new Error(`Request failed: ${res.status}`);
   }
 
-  const articles: CurrentsArticle[] = await res.json();
-  return mapArticles(articles);
+  const articles: Article[] = await res.json();
+  return articles.map((a) => ( { ...a, publishedAt: new Date(a.publishedAt) } ));
 }
 
 /**
