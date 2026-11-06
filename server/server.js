@@ -6,7 +6,7 @@ import refreshRouter from './routes/refresh.js';
 
 await connectDB();
 
-const PORT = 3001;
+const PORT = process.env.SERVER_PORT || 3001;
 
 export function createApp() {
   const app = express();
