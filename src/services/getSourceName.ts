@@ -1,6 +1,6 @@
 import sourceNames from '@data/source-names.json';
 
-const SOURCE_NAMES = sourceNames;
+const SOURCE_NAMES: Record<string, string> = sourceNames;
 
 /**
  * Extract the hostname from article URL
