@@ -1,5 +1,5 @@
 import { ArticleCard, SkeletonCard } from '@components/ArticleCard';
-import type { Article, Status } from 'src/types';
+import type { Article, Status } from '@/types';
 import styles from './Feed.module.css';
 import { Newsletter } from '@icons/Newsletter';
 
