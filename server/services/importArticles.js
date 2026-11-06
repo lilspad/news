@@ -25,8 +25,21 @@ function toStored(article) {
 }
 
 export async function importArticles() {
+  const timestamp = Date.now();
   const raw = await fetchArticles();
   const filtered = filterArticles(raw);
+
+  const ms = 1000 * 60;
+  let newest = null, oldest = null;
+  if (filtered.length > 0) {
+    const dates = filtered.map(a => new Date(a.published).getTime());
+    // newest and oldest posts' relative ages in minutes
+    // oldest only if there are more than 1 post
+    newest = (timestamp - Math.max(...dates)) / ms;
+    if (filtered.length > 1) {
+      oldest = (timestamp - Math.min(...dates)) / ms;
+    }
+  }
 
   const bulkOps = filtered.map(article => ({
     updateOne: {
@@ -42,7 +55,14 @@ export async function importArticles() {
     inserted = result.upsertedCount ?? 0;
   }
 
-  const summary = { raw: raw.length, filtered: filtered.length, inserted };
+  const summary = {
+    importTime: timestamp,
+    itemsReceived: raw.length,
+    itemsKept: filtered.length,
+    itemsInserted: inserted,
+    newestPostAgeMinutes: newest,
+    oldestPostAgeMinutes: oldest
+  };
   console.log('Import:', summary);
   return summary;
 }
