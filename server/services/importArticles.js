@@ -63,6 +63,6 @@ export async function importArticles() {
     newestPostAgeMinutes: newest,
     oldestPostAgeMinutes: oldest
   };
-  console.log('Import:', summary);
+
   return summary;
 }
