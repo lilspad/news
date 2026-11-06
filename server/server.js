@@ -1,5 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
+import cors from 'cors';
 import { connectDB } from './db.js';
 import newsRouter from './routes/news.js';
 import refreshRouter from './routes/refresh.js';
@@ -10,6 +11,8 @@ const PORT = process.env.SERVER_PORT || 3001;
 
 export function createApp() {
   const app = express();
+
+  app.use(cors({origin: process.env.FRONTEND_URL}));
 
   app.use('/api/news', newsRouter);
   app.use('/api/refresh', refreshRouter);
