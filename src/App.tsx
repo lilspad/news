@@ -1,6 +1,6 @@
 import { Header } from '@components/Header';
 import { Feed } from '@components/Feed';
-import { useFetchArticles } from './hooks/useFetchArticles';
+import { useFetchArticles } from '@hooks/useFetchArticles';
 import { Footer } from '@components/Footer';
 
 function App() {
