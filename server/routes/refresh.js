@@ -15,10 +15,23 @@ router.post('/', async (req, res) => {
 
   try {
     const result = await importArticles();
+    const {
+      itemsReceived,
+      itemsKept,
+      itemsInserted,
+      newestPostAgeMinutes,
+      oldestPostAgeMinutes
+    } = result;
+
     await saveImportLog({
-      ...result,
+      itemsReceived,
+      itemsKept,
+      itemsInserted,
+      newestPostAgeMinutes,
+      oldestPostAgeMinutes,
       status: 'success',
     });
+
     res.json(result);
   } catch (err) {
     console.error('POST /api/refresh failed:', err);
