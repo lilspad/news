@@ -12,6 +12,7 @@ function sourceFromUrl(url) {
 
 function toStored(article) {
   const published = new Date(article.published);
+  if (isNaN(published)) return null;
   return {
     title: article.title,
     description: article.description,
@@ -20,7 +21,7 @@ function toStored(article) {
     author: article.author || null,
     source: sourceFromUrl(article.url),
     category: article.category,
-    publishedAt: isNaN(published) ? new Date() : published,
+    publishedAt: published,
   };
 }
 
