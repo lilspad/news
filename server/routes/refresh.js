@@ -1,6 +1,5 @@
 import express from 'express';
 import { importArticles } from '../services/importArticles.js';
-import { ImportLog } from '../models/importLog.js';
 import { saveImportLog } from '../services/saveImportLog.js';
 
 const router = express.Router();
