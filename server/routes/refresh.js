@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
   } catch (err) {
     console.error('POST /api/refresh failed:', err);
 
-    await logRun({
+    await saveImportLog({
       status: 'error',
       errorMsg: err.message,
     });
