@@ -14,12 +14,7 @@ export function Feed ({ data, status }: FeedProps) {
       <>
         <div className={styles['feed']}>
           {Array.from({ length: 6 }).map((_, i) => (
-            <SkeletonCard key={i}></SkeletonCard>
-          ))}
-        </div>
-        <div className={styles['feed']}>
-          {data.map((entry) => (
-            <ArticleCard key={entry.id} {...entry}></ArticleCard>
+            <SkeletonCard key={i} />
           ))}
         </div>
       </>
@@ -50,7 +45,7 @@ export function Feed ({ data, status }: FeedProps) {
   return (
     <div className={styles['feed']}>
       {data.map((entry) => (
-        <ArticleCard key={entry.id} {...entry}></ArticleCard>
+        <ArticleCard key={entry.id} {...entry} />
       ))}
     </div>
   );
