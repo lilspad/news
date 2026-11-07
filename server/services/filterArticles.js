@@ -15,7 +15,7 @@ function isNull(value) {
 }
 
 function hasContent(article) {
-  const requiredFields = ['title', 'description'];
+  const requiredFields = ['title', 'description', 'url'];
   return requiredFields.every((field) => !isNull(article[field]));
 }
 

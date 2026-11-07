@@ -10,6 +10,14 @@ function sourceFromUrl(url) {
   }
 }
 
+function cleanValue(value) {
+  return (
+    value === "None" ||
+    value === "" ||
+    value.length === 0
+  ) ? null : value;
+}
+
 function toStored(article) {
   const published = new Date(article.published);
   if (isNaN(published)) return null;
@@ -17,10 +25,10 @@ function toStored(article) {
     title: article.title,
     description: article.description,
     url: article.url,
-    imageUrl: article.image || null,
-    author: article.author || null,
+    imageUrl: cleanValue(article.image),
+    author: cleanValue(article.author),
     source: sourceFromUrl(article.url),
-    category: article.category,
+    category: cleanValue(article.category),
     publishedAt: published,
   };
 }
