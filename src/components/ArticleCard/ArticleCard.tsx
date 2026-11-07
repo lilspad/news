@@ -9,10 +9,16 @@ export function ArticleCard ({
   url,
   source,
   publishedAt,
-  category
+  category,
+  imageUrl,
 }: Article) {
   return (
     <article className={styles['article-card']}>
+      {imageUrl &&
+      <div className={styles['article-card--image-container']}>
+        <img src={imageUrl} />
+      </div>
+      }
       <div className={styles['article-card--body']}>
         <div>
           <span className={styles['article-card--category']}>

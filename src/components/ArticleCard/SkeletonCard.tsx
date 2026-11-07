@@ -3,6 +3,7 @@ import styles from './ArticleCard.module.css';
 export function SkeletonCard () {
   return (
     <article className={styles['skeleton-card']} aria-hidden="true">
+      <div className={styles['skeleton-card--image-container']}></div>
       <div className={styles['skeleton-card--body']}>
         <div className={styles['skeleton-card--meta']}>
           <span className={styles['skeleton-card--source']}></span>
