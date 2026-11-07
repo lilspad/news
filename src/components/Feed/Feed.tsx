@@ -9,6 +9,23 @@ interface FeedProps {
 }
 
 export function Feed ({ data, status }: FeedProps) {
+  if ( status === 'loading' ) {
+    return (
+      <>
+        <div className={styles['feed']}>
+          {Array.from({ length: 6 }).map((_, i) => (
+            <SkeletonCard key={i}></SkeletonCard>
+          ))}
+        </div>
+        <div className={styles['feed']}>
+          {data.map((entry) => (
+            <ArticleCard key={entry.id} {...entry}></ArticleCard>
+          ))}
+        </div>
+      </>
+    );
+  }
+
   if (data.length === 0) {
     return (
       <div className={styles['feed--error']}>
@@ -29,21 +46,6 @@ export function Feed ({ data, status }: FeedProps) {
       </div>
     );
   }
-  if ( status === 'loading' ) {
-    return (
-      <>
-        <div className={styles['feed']}>
-          {Array.from({ length: 6 }).map((_, i) => (
-            <SkeletonCard key={i}></SkeletonCard>
-          ))}
-        </div>
-        <div className={styles['feed']}>
-          {data.map((entry) => (
-            <ArticleCard key={entry.id} {...entry}></ArticleCard>
-          ))}
-        </div>
-      </>
-    );}
 
   return (
     <div className={styles['feed']}>
