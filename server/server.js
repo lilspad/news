@@ -14,6 +14,8 @@ export function createApp() {
 
   app.use(cors({origin: process.env.FRONTEND_URL}));
 
+  app.get('/healthz', (req, res) => res.send('ok'));
+
   app.use('/api/news', newsRouter);
   app.use('/api/refresh', refreshRouter);
 
