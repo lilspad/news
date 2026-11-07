@@ -5,7 +5,7 @@ const importLogSchema = new mongoose.Schema({
   importTime: { type: Date, default: Date.now },
   itemsReceived: Number,
   itemsKept: Number,
-  itemsImported: Number,
+  itemsInserted: Number,
   newestPostAgeMinutes: Number,
   oldestPostAgeMinutes: Number, 
   errorMsg: String
