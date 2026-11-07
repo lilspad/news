@@ -1,6 +1,6 @@
 import styles from './ArticleCard.module.css';
 import OpenInNew from '@components/icons/OpenInNew';
-import { formatTimestamp } from '@services/formatTimestamp';
+import { useRelativeTime } from '@hooks/useRelativeTime';
 import type { Article } from '@/types';
 
 export function ArticleCard ({
@@ -23,7 +23,7 @@ export function ArticleCard ({
         <p>{description}</p>
         <div className={styles['article-card--meta']}>
           <span className={styles['article-card--time']}>
-            <time>{formatTimestamp(publishedAt)}</time>
+            <time>{useRelativeTime(publishedAt)}</time>
           </span>
           <span className={styles['article-card--source']}>{source}<OpenInNew /></span>
         </div>
