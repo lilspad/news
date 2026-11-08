@@ -8,6 +8,7 @@ const importLogSchema = new mongoose.Schema({
   itemsInserted: Number,
   newestPostAgeMinutes: Number,
   oldestPostAgeMinutes: Number, 
+  oldestRawPostAgeMinutes: Number,
   errorMsg: String
 });
 

@@ -44,7 +44,16 @@ export async function importArticles() {
   const filtered = filterArticles(raw);
 
   const ms = 1000 * 60;
-  let newest = null, oldest = null;
+  let newest = null, oldest = null, oldestRaw = null;
+  // get the age of the oldest post returned by API
+  if (raw.length > 0) {
+    const oldestRawPost = raw.reduce((a, b) =>
+      new Date(a.published) < new Date(b.published) ? a : b
+    );
+    const oldestRawPostDate = new Date(oldestRawPost.published).getTime();
+    oldestRaw = (timestamp - oldestRawPostDate) / ms;
+  }
+  // get the ages of newest and oldest posts retained post filtering
   if (filtered.length > 0) {
     const dates = filtered.map(a => new Date(a.published).getTime());
     // newest and oldest posts' relative ages in minutes
@@ -75,7 +84,8 @@ export async function importArticles() {
     itemsKept: filtered.length,
     itemsInserted: inserted,
     newestPostAgeMinutes: newest,
-    oldestPostAgeMinutes: oldest
+    oldestPostAgeMinutes: oldest,
+    oldestRawPostAgeMinutes: oldestRaw
   };
 
   return logs;

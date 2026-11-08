@@ -19,7 +19,8 @@ router.post('/', async (req, res) => {
       itemsKept,
       itemsInserted,
       newestPostAgeMinutes,
-      oldestPostAgeMinutes
+      oldestPostAgeMinutes,
+      oldestRawPostAgeMinutes
     } = result;
 
     await saveImportLog({
@@ -28,6 +29,7 @@ router.post('/', async (req, res) => {
       itemsInserted,
       newestPostAgeMinutes,
       oldestPostAgeMinutes,
+      oldestRawPostAgeMinutes,
       status: 'success',
     });
 
