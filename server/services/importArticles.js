@@ -33,6 +33,11 @@ function toStored(article) {
   };
 }
 
+/**
+ * Fetches, filters, and upserts articles into the database.
+ * Existing articles (matched by id) are left unchanged; only new ones are inserted.
+ * @returns {Promise<Object>} Import meta.
+*/
 export async function importArticles() {
   const timestamp = Date.now();
   const raw = await fetchArticles();
