@@ -14,7 +14,7 @@ function cleanValue(value) {
   return (
     value === "None" ||
     value === "" ||
-    value.length === 0
+    value?.length === 0
   ) ? null : value;
 }
 
