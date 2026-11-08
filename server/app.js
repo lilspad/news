@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import newsRouter from './routes/news.js';
+import summaryRouter from './routes/summary.js';
 import refreshRouter from './routes/refresh.js';
 import generateSummaryRouter from './routes/generateSummary.js';
 
@@ -12,6 +13,7 @@ export function createApp() {
   app.get('/healthz', (req, res) => res.send('ok'));
 
   app.use('/api/news', newsRouter);
+  app.use('/api/summary', summaryRouter);
   app.use('/api/refresh', refreshRouter);
   app.use('/api/generate-summary', generateSummaryRouter);
 
