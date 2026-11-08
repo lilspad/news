@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const importLogSchema = new mongoose.Schema({
   status: { type: String, enum: ['success', 'error'] },

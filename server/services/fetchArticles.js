@@ -1,14 +1,14 @@
-  const URL = 'https://api.currentsapi.services/v1/latest-news';
+const URL = 'https://api.currentsapi.services/v1/latest-news';
 
 
-export async function fetchArticles({pageSize = 20, pageNumber = 1} = {}) {
+export async function fetchArticles({ pageSize = 20, pageNumber = 1 } = {}) {
   const apiKey = process.env.CURRENTS_API_KEY;
   if (!apiKey) throw new Error('[Currents API] Missing CURRENTS_API_KEY');
 
   const params = new URLSearchParams({
     page_size: String(pageSize),
     page_number: String(pageNumber),
-  })
+  });
 
   const response = await fetch(`${URL}?${params}`, {
     headers: {

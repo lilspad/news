@@ -1,4 +1,4 @@
-import sourceNames from '../../src/data/source-names.json' with {type: 'json'};
+import sourceNames from '../../src/data/source-names.json' with { type: 'json' };
 
 const ALLOWED = new Set(Object.keys(sourceNames));
 
@@ -11,7 +11,7 @@ function getSource(url) {
 }
 
 function isNull(value) {
-  return !value || value === "None";
+  return !value || value === 'None';
 }
 
 function hasContent(article) {
@@ -37,5 +37,5 @@ export function filterArticles(articles) {
     if (!hasContent(article)) return false;
     if (!isAllowedSource(article)) return false;
     return true;
-  })
+  });
 }

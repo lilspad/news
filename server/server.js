@@ -7,5 +7,5 @@ await connectDB();
 const PORT = process.env.PORT || 3001;
 
 createApp().listen(PORT, () => {
-    console.log(`Proxy listening on http://localhost:${PORT}`);
-  });
+  console.log(`Proxy listening on http://localhost:${PORT}`);
+});

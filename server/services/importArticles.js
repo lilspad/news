@@ -12,8 +12,8 @@ function sourceFromUrl(url) {
 
 function cleanValue(value) {
   return (
-    value === "None" ||
-    value === "" ||
+    value === 'None' ||
+    value === '' ||
     value?.length === 0
   ) ? null : value;
 }
@@ -64,7 +64,7 @@ export async function importArticles() {
     inserted = result.upsertedCount ?? 0;
   }
 
-  const summary = {
+  const logs = {
     importTime: timestamp,
     itemsReceived: raw.length,
     itemsKept: filtered.length,
@@ -73,5 +73,5 @@ export async function importArticles() {
     oldestPostAgeMinutes: oldest
   };
 
-  return summary;
+  return logs;
 }
