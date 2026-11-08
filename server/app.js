@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import newsRouter from './routes/news.js';
 import refreshRouter from './routes/refresh.js';
+import generateSummaryRouter from './routes/generateSummary.js';
 
 export function createApp() {
   const app = express();
@@ -12,6 +13,7 @@ export function createApp() {
 
   app.use('/api/news', newsRouter);
   app.use('/api/refresh', refreshRouter);
+  app.use('/api/generate-summary', generateSummaryRouter);
 
   return app;
 }
