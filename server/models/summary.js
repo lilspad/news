@@ -8,6 +8,7 @@ const RETENTION_MS = RETENTION_DAYS * DAY_MS;
 const summarySchema = mongoose.Schema({
   text: String,
   generatedAt: { type: Date, default: Date.now },
+  incremental: Boolean
 });
 
 summarySchema.index({ generatedAt: 1 }, { expireAfterSeconds: RETENTION_MS });

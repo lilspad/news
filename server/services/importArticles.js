@@ -73,9 +73,13 @@ export async function importArticles() {
   }));
 
   let inserted = 0;
+  let newArticles = null;
   if (bulkOps.length) {
     const result = await Article.bulkWrite(bulkOps, { ordered: false });
     inserted = result.upsertedCount ?? 0;
+
+    const newIds = new Set(Object.values(result.upsertedIds).map(String));
+    newArticles = filtered.filter(a => newIds.has(String(a.id)));
   }
 
   const logs = {
@@ -88,5 +92,5 @@ export async function importArticles() {
     oldestRawPostAgeMinutes: oldestRaw
   };
 
-  return logs;
+  return { logs, newArticles };
 }

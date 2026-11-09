@@ -1,6 +1,7 @@
 import express from 'express';
 import { importArticles } from '../services/importArticles.js';
 import { saveImportLog } from '../services/saveImportLog.js';
+import { importSummary } from '../services/importSummary.js';
 
 const router = express.Router();
 
@@ -15,25 +16,19 @@ router.post('/', async (req, res) => {
   try {
     const result = await importArticles();
     const {
-      itemsReceived,
-      itemsKept,
-      itemsInserted,
-      newestPostAgeMinutes,
-      oldestPostAgeMinutes,
-      oldestRawPostAgeMinutes
+      logs, newArticles
     } = result;
 
     await saveImportLog({
-      itemsReceived,
-      itemsKept,
-      itemsInserted,
-      newestPostAgeMinutes,
-      oldestPostAgeMinutes,
-      oldestRawPostAgeMinutes,
+      ...logs,
       status: 'success',
     });
 
-    res.json(result);
+    if (newArticles) {
+      await importSummary(newArticles, true);
+    }
+
+    res.json(logs);
   } catch (err) {
     console.error('POST /api/refresh failed:', err);
 
@@ -42,7 +37,7 @@ router.post('/', async (req, res) => {
       errorMsg: err.message,
     });
 
-    res.status(500).json({ error: 'Failed to fetch news' });
+    res.status(500).json({ error: 'Failed to refresh news and/or summary' });
   }
 });
 
