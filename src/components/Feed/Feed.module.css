@@ -1,12 +1,19 @@
 .feed {
+  margin: 0 auto;
+  max-width: 1082px;
+  padding: 0 var(--padding-medium);
+
+  > h2 {
+    margin: var(--space-4) 0;
+  }
+}
+
+.feed--articles {
   align-items: flex-start;
   align-content: flex-start;
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-6);
-  margin: 0 auto;
-  max-width: 1082px;
-  padding: var(--padding-medium);
 }
 
 .feed--error {

@@ -44,9 +44,12 @@ export function Feed ({ data, status }: FeedProps) {
 
   return (
     <div className={styles['feed']}>
-      {data.map((entry) => (
-        <ArticleCard key={entry.id} {...entry} />
-      ))}
+      <h2>Latest stories</h2>
+      <div className={styles['feed--articles']}>
+        {data.map((entry) => (
+          <ArticleCard key={entry.id} {...entry} />
+        ))}
+      </div>
     </div>
   );
 }
