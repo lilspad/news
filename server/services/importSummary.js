@@ -11,7 +11,6 @@ export async function importSummary(articles, incremental = false) {
   let summary;
   if (incremental) {
     summary = await refreshSummary(prevSummary.text, articles);
-    console.log('summary: ', summary);
   } else {
     summary = await generateSummary(articles);
   }
