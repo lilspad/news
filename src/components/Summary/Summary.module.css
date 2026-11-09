@@ -18,8 +18,8 @@
   }
 
   &.summary--expand-on {
-    height: 1000px;
     height: -moz-max-content;
+    height: 1000px;
     max-height: fit-content;
   }
 }
