@@ -1,5 +1,5 @@
 import styles from './ArticleCard.module.css';
-import OpenInNew from '@components/icons/OpenInNew';
+import { OpenInNew } from '@components/icons/OpenInNew';
 import { RelativeTime } from '@components/RelativeTime';
 import type { Article } from '@/types';
 
@@ -21,13 +21,13 @@ export function ArticleCard ({
       }
       <div className={styles['article-card--body']}>
         <div>
-          <span className={styles['article-card--category']}>
+          <span className={styles['article-card--category'] + ' type-meta'}>
             {category ? category.length > 0 && category.join('︱') : ''}
           </span>
         </div>
         <h2><a href={url} className={styles['article-card--link']}>{title}</a></h2>
         <p>{description}</p>
-        <div className={styles['article-card--meta']}>
+        <div className={styles['article-card--meta'] + ' type-meta'}>
           <span className={styles['article-card--time']}>
             <RelativeTime date={publishedAt} />
           </span>
