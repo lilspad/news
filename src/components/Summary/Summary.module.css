@@ -1,3 +1,18 @@
+.summary--container {
+  display: grid;
+  grid-template-rows: minmax(310px, 0fr);
+  margin: var(--padding-medium) 0;
+  transition: grid-template-rows 1s ease;
+
+  &.summary--expand-off {
+    grid-template-rows: minmax(310px, 0fr);
+  }
+
+  &.summary--expand-on {
+    grid-template-rows: minmax(310px, 1fr);
+  }
+}
+
 .summary,
 .summary--skeleton,
 .summary--error {
@@ -7,21 +22,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  margin: var(--padding-medium) 0;
+  height: 100%;
   overflow: hidden;
   padding: var(--space-4);
   position: relative;
-  transition: height 1s ease;
-
-  &.summary--expand-off {
-    height: 310px;
-  }
-
-  &.summary--expand-on {
-    height: -moz-max-content;
-    height: 1000px;
-    max-height: fit-content;
-  }
 }
 
 .summary--expand-toggle-container {
