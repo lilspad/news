@@ -1,7 +1,9 @@
 .summary--container {
   display: grid;
   grid-template-rows: minmax(310px, 0fr);
-  margin: var(--padding-medium) 0;
+  margin: var(--padding-medium) auto;
+  max-width: 1082px;
+  padding: 0 var(--padding-medium);
   transition: grid-template-rows 1s ease;
 
   &.summary--expand-off {
@@ -24,7 +26,7 @@
   gap: var(--space-3);
   height: 100%;
   overflow: hidden;
-  padding: var(--space-4);
+  padding: var(--padding-medium);
   position: relative;
 }
 
