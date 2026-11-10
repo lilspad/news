@@ -3,7 +3,7 @@
   grid-template-rows: minmax(310px, 0fr);
   margin: var(--padding-medium) auto;
   max-width: 1082px;
-  padding: 0 var(--padding-medium);
+  padding: 0 var(--padding-large);
   transition: grid-template-rows 1s ease;
 
   &.summary--expand-off {

@@ -56,7 +56,6 @@ h6 {
 
 body {
   background: var(--color-background);
-  padding: 0 var(--padding-large);
 }
 
 main {

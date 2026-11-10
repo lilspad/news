@@ -40,11 +40,13 @@
   --type-button-weight: 600;
   --type-display-family: "Bodoni 72 Oldstyle";
   --type-display-line-height: 32px;
-  --type-display-size: 24px;
+  --type-display-size: 28px;
   --type-display-weight: 700;
   --type-headline-family: "Bodoni 72 Oldstyle";
   --type-headline-line-height: 28px;
-  --type-headline-size: 20px;
+  --type-headline-size: 18px;
+  --type-heading-weight: 400;
+  --type-heading-size: 24px;
   --type-headline-weight: 400;
   --type-meta-family: "Courier New";
   --type-meta-line-height: 16px;

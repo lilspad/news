@@ -1,4 +1,6 @@
 .header {
-  border-bottom: var(--border);
-  padding: var(--padding-medium);
+  margin: 0 auto;
+  max-width: 1082px;
+  padding: var(--padding-small) var(--padding-large) 0;
+  text-align: center;
 }

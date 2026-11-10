@@ -17,6 +17,15 @@ h1,
 }
 
 h2,
+.type-heading {
+  color: var(--color-text);
+  font:
+    var(--type-heading-weight)
+    var(--type-heading-size)/var(--type-headline-line-height)
+    var(--type-headline-family);
+}
+
+h3,
 .type-headline {
   color: var(--color-text);
   font:
@@ -46,7 +55,8 @@ button,
     --type-button-line-height: 20px;
     --type-button-size: 14px;
     --type-display-line-height: 36px;
-    --type-display-size: 28px;
+    --type-display-size: 32px;
+    --type-heading-size: 28px;
   }
 }
 
@@ -55,7 +65,7 @@ button,
     --type-body-line-height: 24px;
     --type-body-size: 16px;
     --type-display-line-height: 40px;
-    --type-display-size: 32px;
+    --type-display-size: 36px;
     --type-headline-line-height: 32px;
     --type-headline-size: 24px;
     --type-meta-line-height: 20px;

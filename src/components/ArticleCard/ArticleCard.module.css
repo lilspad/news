@@ -61,7 +61,7 @@
 .skeleton-card--body {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-2);
   height: 100%;
   padding: var(--space-4);
 
@@ -112,7 +112,6 @@
 .article-card--category {
   display: block;
   font-weight: 500;
-  height: 24px;
   letter-spacing: 0.48px;
   text-transform: uppercase;
 }
@@ -152,6 +151,11 @@
   .article-card, .skeleton-card {
     height: calc(50% + (var(--type-headline-size) * 2));
     max-width: calc(50% - var(--space-6)); /* the flex gap */
+  }
+
+  .article-card--body,
+  .skeleton-card--body  {
+    gap: var(--space-3)
   }
 
   .article-card h2 {
