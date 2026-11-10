@@ -5,6 +5,12 @@ import { importSummary } from '../services/importSummary.js';
 
 const router = express.Router();
 
+const REBUILD_INTERVAL_HOURS = 6;
+
+function isRebuildHour(d = new Date()) {
+  return d.getUTCMinutes() === 0 && d.getUTCHours() % REBUILD_INTERVAL_HOURS === 0;
+}
+
 router.post('/', async (req, res) => {
   const headerSecret = req.get('X-Refresh-Secret');
   const envSecret = process.env.REFRESH_SECRET;
@@ -24,7 +30,7 @@ router.post('/', async (req, res) => {
       status: 'success',
     });
 
-    if (newArticles) {
+    if (newArticles && !isRebuildHour()) {
       await importSummary(newArticles, true);
     }
 
