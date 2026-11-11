@@ -86,10 +86,16 @@
   overflow: hidden;
 }
 
-.article-card--link:hover,
 .article-card--link:focus {
   color: var(--color-accent);
   text-decoration: underline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .article-card--link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
 }
 
 .article-card--link::after {
