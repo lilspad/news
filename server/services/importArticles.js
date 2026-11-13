@@ -79,7 +79,7 @@ export async function importArticles() {
     inserted = result.upsertedCount ?? 0;
 
     const newIds = new Set(Object.values(result.upsertedIds).map(String));
-    newArticles = filtered.filter(a => newIds.has(String(a.id)));
+    newArticles = newIds.size ? filtered.filter(a => newIds.has(String(a.id))) : null;
   }
 
   const logs = {

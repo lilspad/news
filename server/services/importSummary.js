@@ -8,14 +8,15 @@ import { generateSummary, refreshSummary } from './generateSummary.js';
  */
 export async function importSummary(articles, incremental = false) {
   const prevSummary = await Summary.findOne().sort({ generatedAt: -1 });
-  let summary;
+  let result;
   if (incremental) {
-    summary = await refreshSummary(prevSummary.text, articles);
+    result = await refreshSummary(prevSummary.categories, articles);
   } else {
-    summary = await generateSummary(articles);
+    result = await generateSummary(articles);
   }
   try {
-    await Summary.create({ text: summary, incremental });
+    const parsedResult = JSON.parse(result);
+    await Summary.create({ categories: parsedResult, incremental });
   } catch (e) {
     console.error('Could not import summary: ', e);
   }
