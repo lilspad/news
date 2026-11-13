@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import sourceNames from '../data/source-names.json' with { type: 'json' };
 
 export const RETENTION_HOURS = 48;
 const HOUR_MS = 1000 * 60 * 60;
@@ -30,6 +31,7 @@ articleSchema.set('toJSON', {
   versionKey: false,
   transform: (doc, ret) => {
     ret.id = ret._id;
+    ret.sourceName = sourceNames[ret.source] || ret.source;
     delete ret._id;
     delete ret.fetchedAt;
     delete ret.expireAt;

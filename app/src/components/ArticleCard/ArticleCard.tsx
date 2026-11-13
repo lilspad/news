@@ -8,6 +8,7 @@ export function ArticleCard ({
   description,
   url,
   source,
+  sourceName,
   publishedAt,
   category,
   imageUrl,
@@ -31,7 +32,7 @@ export function ArticleCard ({
           <span className={styles['article-card--time']}>
             <RelativeTime date={publishedAt} />
           </span>
-          <span className={styles['article-card--source']}>{source}<OpenInNew /></span>
+          <span className={styles['article-card--source']}>{sourceName ?? source}<OpenInNew /></span>
         </div>
       </div>
     </article>

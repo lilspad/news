@@ -38,10 +38,4 @@ export default defineConfig([
       'no-console': ['warn', { allow: ['warn', 'error'] }],
     },
   },
-  {
-    files: ['server/**/*.{ts,js}'],
-    rules: {
-      'no-console': 'off',
-    },
-  },
 ]);
