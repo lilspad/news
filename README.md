@@ -30,16 +30,20 @@ TBD
 
 ### Installation
 
+The frontend (`app/`) and backend (`server/`) are separate packages. Install each one:
+
 \`\`\`bash
 gh repo clone lilspad/news
 cd news
-npm install
+cd app && npm install
+cd ../server && npm install
 \`\`\`
 
 ### Running Locally
 
 Vite app:
 \`\`\`bash
+cd app
 npm run dev
 \`\`\`
 
@@ -48,14 +52,14 @@ Runs at http://localhost:5173
 Server:
 \`\`\`bash
 cd server
-npm run proxy
+npm run dev
 \`\`\`
 
 Runs at http://localhost:3001
 
 ## Environment Variables
 
-### Frontend (`.env`)
+### Frontend (`app/.env`)
 
 | Variable | Description |
 |----------|-------------|
@@ -78,31 +82,47 @@ Runs at http://localhost:3001
 
 \`\`\`
 news/
-├── docs/adr/     # architecture decision records
-├── public/       # static assets
-├── server/       # Express proxy + scheduled ingestion
-│   ├── models/   # Mongoose schemas
-│   ├── routes/   # API endpoints
-│   └── services/
-├── src/
-│   ├── assets/   # styles + design tokens
-│   ├── components/
-│   ├── hooks/
-│   ├── services/
-│   ├── data/
-│   └── test/
-├── index.html
-└── package.json
+├── docs/adr/         # architecture decision records
+├── app/              # Vite + React frontend
+│   ├── public/       # static assets
+│   ├── src/
+│   │   ├── assets/   # styles + design tokens
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   ├── data/
+│   │   └── test/
+│   ├── index.html
+│   └── package.json
+└── server/           # Express proxy + scheduled ingestion
+    ├── data/         # allowed news sources
+    ├── models/       # Mongoose schemas
+    ├── routes/       # API endpoints
+    ├── services/
+    ├── test/
+    └── package.json
 \`\`\`
 
 ## Scripts
+
+### Frontend (`app/`)
 
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start the Vite dev server |
 | `npm run build` | Type-check and build for production |
 | `npm run preview` | Preview the production build |
-| `npm run proxy` | Run the Express proxy server |
+| `npm test` | Run the test suite once |
+| `npm run test:watch` | Run tests in watch mode |
+| `npm run lint` | Lint the codebase |
+| `npm run fix` | Lint and auto-fix |
+
+### Server (`server/`)
+
+| Command | Description |
+|---------|-------------|
+| `npm start` | Run the Express proxy server |
+| `npm run dev` | Run the server and restart on file changes |
 | `npm test` | Run the test suite once |
 | `npm run test:watch` | Run tests in watch mode |
 | `npm run lint` | Lint the codebase |
