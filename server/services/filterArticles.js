@@ -1,4 +1,4 @@
-import sourceNames from '../../src/data/source-names.json' with { type: 'json' };
+import sourceNames from '../data/source-names.json' with { type: 'json' };
 
 const ALLOWED = new Set(Object.keys(sourceNames));
 
