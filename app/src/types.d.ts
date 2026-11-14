@@ -12,3 +12,11 @@ export interface Article {
 }
 
 export type Status = 'loading' | 'error' | 'ready';
+
+export interface Summary {
+  categories:
+  {
+    category: string;
+    text: string;
+  }[];
+};

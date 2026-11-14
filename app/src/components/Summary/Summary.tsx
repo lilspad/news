@@ -1,4 +1,4 @@
-import type { Status } from '@/types';
+import type { Status, Summary } from '@/types';
 import styles from './Summary.module.css';
 import { Newsletter } from '@icons/Newsletter';
 import { Markdown } from '@components/Markdown';
@@ -7,11 +7,11 @@ import { DownArrow } from '@components/icons/DownArrow';
 import { useState } from 'react';
 
 interface SummaryProps {
-  text: string;
+  summary: Summary | null;
   status: Status;
 }
 
-export function Summary ({ text, status }: SummaryProps) {
+export function Summary ({ summary, status }: SummaryProps) {
   const [expand, setExpand] = useState(false);
 
   if ( status === 'loading' ) {
@@ -36,7 +36,7 @@ export function Summary ({ text, status }: SummaryProps) {
     );
   }
 
-  if (status === 'error' || text.length === 0) {
+  if (status === 'error' || !summary) {
     return (
       <div className={styles['summary--error']}>
         <div className={styles['summary--icon']}>
@@ -57,8 +57,13 @@ export function Summary ({ text, status }: SummaryProps) {
           </span>
         </div>
         <h2>Here's what happened today, in a nutshell.</h2>
-        <div className={styles['summary--text']}>
-          <Markdown text={text}></Markdown>
+        <div>
+          {summary.categories.map(c => (
+            <div className={styles['summary--text']}>
+              <h3>{c.category}</h3>
+              <Markdown text={c.text}></Markdown>
+            </div>
+          ))}
         </div>
         <div className={styles['summary--expand-toggle-container']}>
           <button onClick={() => setExpand(!expand)} className={styles['summary--expand-toggle'] + ' type-meta'}>

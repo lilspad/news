@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { Status } from '@/types';
+import type { Status, Summary } from '@/types';
 
 async function fetchSummary() {
   const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/summary`);
@@ -7,8 +7,8 @@ async function fetchSummary() {
     throw new Error(`Request failed: ${res.status}`);
   }
 
-  const summary: { text: string } = await res.json();
-  return summary.text;
+  const summary: Summary = await res.json();
+  return summary;
 }
 
 /**
@@ -20,7 +20,7 @@ async function fetchSummary() {
  * @returns summary: string and Status
  */
 export function useFetchSummary() {
-  const [summary, setSummary] = useState<string>('');
+  const [summary, setSummary] = useState<Summary|null>(null);
   const [status, setStatus] = useState<Status>('loading');
 
   useEffect(() => {

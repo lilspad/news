@@ -12,7 +12,7 @@ function App() {
     <>
       <Header />
       <main>
-        <Summary status={summaryStatus} text={summary} />
+        <Summary status={summaryStatus} summary={summary} />
         <Feed status={articleStatus} data={articles}></Feed>
       </main>
       <Footer />
