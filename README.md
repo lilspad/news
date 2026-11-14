@@ -32,28 +32,28 @@ TBD
 
 The frontend (`app/`) and backend (`server/`) are separate packages. Install each one:
 
-\`\`\`bash
+```bash
 gh repo clone lilspad/news
 cd news
 cd app && npm install
 cd ../server && npm install
-\`\`\`
+```
 
 ### Running Locally
 
 Vite app:
-\`\`\`bash
+```bash
 cd app
 npm run dev
-\`\`\`
+```
 
 Runs at http://localhost:5173
 
 Server:
-\`\`\`bash
+```bash
 cd server
 npm run dev
-\`\`\`
+```
 
 Runs at http://localhost:3001
 
@@ -80,7 +80,7 @@ Runs at http://localhost:3001
 
 ## Project Structure
 
-\`\`\`
+```
 news/
 ├── docs/adr/         # architecture decision records
 ├── app/              # Vite + React frontend
@@ -101,7 +101,7 @@ news/
     ├── services/
     ├── test/
     └── package.json
-\`\`\`
+```
 
 ## Scripts
 
@@ -132,7 +132,7 @@ news/
 
 Prospective features:
 
-- [ ] Include reference links in the AI Summary
+- [x] Include reference links in the AI Summary
 - [ ] Dark theme toggle
 - [ ] "Slim" feed toggle (remove photos)
 - [ ] Infinite scroll
