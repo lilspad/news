@@ -1,6 +1,12 @@
 import { Summary } from '../models/summary.js';
 import { generateSummary, refreshSummary } from './generateSummary.js';
 
+function mapFromArticles(articles) {
+  const map = {};
+  for (const a of articles) map[a.id] = { source: a.source, url: a.url };
+  return map;
+}
+
 /**
  * Generates a summary and saves it to the database.
  * @param {Array<Object>} articles - Articles list to include in the summary.
@@ -16,7 +22,11 @@ export async function importSummary(articles, incremental = false) {
   }
   try {
     const parsedResult = JSON.parse(result);
-    await Summary.create({ categories: parsedResult, incremental });
+    const citations = incremental && prevSummary
+      ? { ...prevSummary.citations, ...mapFromArticles(articles) }
+      : mapFromArticles(articles);
+
+    await Summary.create({ categories: parsedResult, citations, incremental });
   } catch (e) {
     console.error('Could not import summary: ', e);
   }

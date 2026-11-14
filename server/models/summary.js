@@ -13,7 +13,11 @@ const summarySchema = mongoose.Schema({
 const summaryListSchema = mongoose.Schema({
   categories: [summarySchema],
   generatedAt: { type: Date, default: Date.now },
-  incremental: Boolean
+  incremental: Boolean,
+  citations: {
+    type: Map,
+    of: new mongoose.Schema({ source: String, url: String }, { _id: false }),
+  }
 });
 
 summaryListSchema.index({ generatedAt: 1 }, { expireAfterSeconds: RETENTION_S });
