@@ -3,7 +3,6 @@ import styles from './Summary.module.css';
 import { Newsletter } from '@icons/Newsletter';
 import { Markdown } from '@components/Markdown';
 import { Sparkles } from '@components/icons/Sparkles';
-import { DownArrow } from '@components/icons/DownArrow';
 import { useState } from 'react';
 
 interface SummaryProps {
@@ -12,7 +11,7 @@ interface SummaryProps {
 }
 
 export function Summary ({ summary, status }: SummaryProps) {
-  const [expand, setExpand] = useState(false);
+  const [active, setActive] = useState(0);
 
   if ( status === 'loading' ) {
     return (
@@ -47,31 +46,35 @@ export function Summary ({ summary, status }: SummaryProps) {
     );
   }
 
-  return (
-    <div className={styles['summary--container'] + ' ' + styles[`summary--expand-${expand ? 'on' : 'off'}`]}>
-      <div className={styles['summary']}>
-        <div className={styles['summary--label-container']}>
-          <Sparkles />
-          <span className={styles['summary--label'] + ' type-meta'}>
-            AI summary
-          </span>
-        </div>
-        <h2>Here's what happened today, in a nutshell.</h2>
-        <div>
-          {summary.categories.map(c => (
-            <div className={styles['summary--text']}>
-              <h3>{c.category}</h3>
-              <Markdown text={c.text}></Markdown>
-            </div>
-          ))}
-        </div>
-        <div className={styles['summary--expand-toggle-container']}>
-          <button onClick={() => setExpand(!expand)} className={styles['summary--expand-toggle'] + ' type-meta'}>
-            <span>View more</span>
-            <DownArrow />
-          </button>
+  if (!!summary && summary.categories.length > 0) {
+    return (
+      <div className={styles['summary--container']}>
+        <div className={styles['summary']}>
+          <div className={styles['summary--label-container']}>
+            <Sparkles />
+            <span className={styles['summary--label'] + ' type-meta'}>
+              AI summary
+            </span>
+          </div>
+          <h2>Here's what happened today, in a nutshell.</h2>
+          <div className={styles['summary--tabs']}>
+            {summary.categories.map((c, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`${styles['summary--tab']} ${active === i ? styles['tab-active'] : ''}`}
+                aria-selected={active === i}
+                aria-controls={`tab-${i + 1}`}
+              >
+                {c.category}
+              </button>
+            ))}
+          </div>
+          <div className={styles['summary--text']}>
+            <Markdown text={summary.categories[active].text}></Markdown>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }

@@ -5,6 +5,7 @@
   --color-accent: var(--palette-light-accent);
   --color-background: var(--palette-light-background);
   --color-border: var(--palette-light-border);
+  --color-border-muted: var(--palette-light-border-muted);
   --color-surface: var(--palette-light-surface);
   --color-text: var(--palette-light-text);
   --color-text-muted: var(--palette-light-text-muted);
@@ -16,6 +17,7 @@
     --color-accent: var(--palette-dark-accent);
     --color-background: var(--palette-dark-background);
     --color-border: var(--palette-dark-border);
+    --color-border-muted: var(--palette-dark-border-muted);
     --color-surface: var(--palette-dark-surface);
     --color-text: var(--palette-dark-text);
     --color-text-muted: var(--palette-dark-text-muted);
@@ -26,6 +28,7 @@
   --color-accent: var(--palette-dark-accent);
   --color-background: var(--palette-dark-background);
   --color-border: var(--palette-dark-border);
+  --color-border-muted: var(--palette-dark-border-muted);
   --color-surface: var(--palette-dark-surface);
   --color-text: var(--palette-dark-text);
   --color-text-muted: var(--palette-dark-text-muted);

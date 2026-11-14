@@ -5,19 +5,9 @@
 
 .summary--container {
   display: grid;
-  grid-template-rows: minmax(310px, 0fr);
   margin: var(--padding-medium) auto;
   max-width: 1082px;
   padding: 0 var(--padding-large);
-  transition: grid-template-rows 1s ease;
-
-  &.summary--expand-off {
-    grid-template-rows: minmax(310px, 0fr);
-  }
-
-  &.summary--expand-on {
-    grid-template-rows: minmax(310px, 1fr);
-  }
 }
 
 .summary,
@@ -30,57 +20,35 @@
   flex-direction: column;
   gap: var(--space-3);
   height: 100%;
+  min-height: fit-content;
   overflow: hidden;
   padding: var(--padding-medium);
   position: relative;
 }
 
-.summary--expand-toggle-container {
-  bottom: 0;
-  left: 0;
-  padding-top: 52px;
-  position: absolute;
-  right: 0;
-  width: 100%;
-  
-  &:after {
-    background: linear-gradient(transparent 0%, var(--color-surface) 60%, var(--color-surface) 100%);
-    content: '';
-    inset: 0;
-    opacity: 1;
-    transition: opacity 0.5s ease;
-    position: absolute;
-  }
+.summary--tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.summary--expand-toggle {
-  background: var(--color-surface);
-  border: none;
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  text-transform: uppercase;
-  z-index: 5;
+.summary--tab {
+  all: unset;
+  border-bottom: 2px solid var(--color-border-muted);
+  font-weight: var(--type-meta-weight);
+  padding: 2px;
 
-  svg {
-    color: var(--color-text);
-    margin: 3px auto 5px;
-  }
-}
-
-.summary--expand-on {
-  .summary--expand-toggle-container:after {
-    opacity: 0.5;
-    transition: opacity 0.5s ease;
+  &:hover {
+    border-color: var(--color-corder);
+    cursor: pointer;
   }
 
-  .summary--expand-toggle {
-    span {
-      display: none;
-    }
-    svg {
-      transform: rotate(180deg);
-    }
+  &:focus {
+    outline: 1px solid var(--color-border);
+  }
+
+  &.tab-active {
+    border-color: var(--color-accent);
   }
 }
 
@@ -91,6 +59,9 @@
     color: var(--color-accent);
     font-size: 11px;
     font-weight: var(--type-meta-weight);
+    position: relative;
+    top: -5px;
+    white-space: nowrap;
 
     &:after {
       content: var(--open-in-new);

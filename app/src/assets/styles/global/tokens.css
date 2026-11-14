@@ -4,6 +4,7 @@
   --palette-dark-accent: #FF8A8A;
   --palette-dark-background: #212121FF;
   --palette-dark-border: #DCDCDCFF;
+  --palette-dark-border-muted: #DCDCDC80;
   --palette-dark-secondary-background: #363636FF;
   --palette-dark-surface: #212121FF;
   --palette-dark-text: #FFFFFFFF;
@@ -11,6 +12,7 @@
   --palette-light-accent: #B70000FF;
   --palette-light-background: #FEFEFEFF;
   --palette-light-border: #363636FF;
+  --palette-light-border-muted: #36363680;
   --palette-light-secondary-background: #DCDCDCFF;
   --palette-light-surface: #FEFEFEFF;
   --palette-light-text: #000000FF;
