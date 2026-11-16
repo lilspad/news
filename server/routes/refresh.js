@@ -24,15 +24,24 @@ router.post('/', async (req, res) => {
     const {
       logs, newArticles
     } = result;
+    let status = 'success';
+    let errorMsg;
+
+    if (newArticles && !isRebuildHour()) {
+      try {
+        await importSummary(newArticles, true);
+      } catch (err) {
+        console.error('importSummary failed:', err);
+        status = 'summary_error';
+        errorMsg = err.message;
+      }
+    }
 
     await saveImportLog({
       ...logs,
-      status: 'success',
+      status,
+      errorMsg
     });
-
-    if (newArticles && !isRebuildHour()) {
-      await importSummary(newArticles, true);
-    }
 
     res.json(logs);
   } catch (err) {

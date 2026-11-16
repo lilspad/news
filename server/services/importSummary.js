@@ -22,9 +22,11 @@ export async function importSummary(articles, incremental = false) {
   }
   try {
     const parsedResult = JSON.parse(result);
-    const citations = incremental && prevSummary
-      ? { ...prevSummary.citations, ...mapFromArticles(articles) }
-      : mapFromArticles(articles);
+    const prevCitations = incremental ? Object.fromEntries(prevSummary.citations) : {};
+    const citations = {
+      ...prevCitations,
+      ...mapFromArticles(articles)
+    };
 
     await Summary.create({ categories: parsedResult, citations, incremental });
   } catch (e) {

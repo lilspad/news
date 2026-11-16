@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const importLogSchema = new mongoose.Schema({
-  status: { type: String, enum: ['success', 'error'] },
+  status: { type: String, enum: ['success', 'error', 'summary_failed'] },
   importTime: { type: Date, default: Date.now },
   itemsReceived: Number,
   itemsKept: Number,
