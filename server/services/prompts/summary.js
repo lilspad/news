@@ -3,7 +3,7 @@ Output rules:
 - Return only the array of category objects.
 - Order categories most significant first.
 - Each object has:
-  - category: display name, sentence case
+  - category: display name, one word
   - summary: bullet points in plain markdown, max 4 per category, fewer preferred
 - Inline citations: after each claim, after the full stop, copy the article's UID exactly as it
   appears in the article list, including the wrapper, e.g.
@@ -29,7 +29,7 @@ Examples of categories are:
 - Medicine
 - Sports
 - Finance
-You do not need to include every category, nor every single article. You should focus on significant stories to make the summary concise.
+You do not need to include every category, nor every single article. Category names should be a single word. You should focus on significant stories to make the summary concise.
 `;
 
 export const REFRESH_PROMPT = `
