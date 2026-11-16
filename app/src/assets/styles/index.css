@@ -37,7 +37,8 @@ a {
   color: inherit;
   text-decoration: none;
 
-  &:focus {
+  &:focus,
+  &:focus-visible {
     outline: none;
   }
 }

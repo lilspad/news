@@ -17,7 +17,7 @@ export function ArticleCard ({
     <article className={styles['article-card']}>
       {imageUrl &&
       <div className={styles['article-card--image-container']}>
-        <img src={imageUrl} />
+        <img src={imageUrl} role="presentation" alt=""/>
       </div>
       }
       <div className={styles['article-card--body']}>

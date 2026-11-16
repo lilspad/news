@@ -57,20 +57,27 @@ export function Summary ({ summary, status }: SummaryProps) {
             </span>
           </div>
           <h2>Here's what happened today, in a nutshell.</h2>
-          <div className={styles['summary--tabs']}>
+          <div className={styles['summary--tabs']} role='tablist'>
             {summary.categories.map((c, i) => (
               <button
+                id={`tab-${i}`}
                 key={i}
                 onClick={() => setActive(i)}
                 className={`${styles['summary--tab']} ${active === i ? styles['tab-active'] : ''}`}
                 aria-selected={active === i}
-                aria-controls={`tab-${i + 1}`}
+                aria-controls='summary-content'
+                role="tab"
               >
                 {c.category}
               </button>
             ))}
           </div>
-          <div className={styles['summary--text']}>
+          <div
+            className={styles['summary--text']}
+            id='summary-content'
+            role="tabpanel"
+            aria-labelledby={`tab-${active}`}
+          >
             <Markdown text={summary.categories[active].text}></Markdown>
           </div>
         </div>
