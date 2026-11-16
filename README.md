@@ -1,15 +1,12 @@
-# Nutshell
+# Nutshell News
+
+Live: https://nutshellnews.netlify.app
 
 A simple latest news feed with an AI overview of the day.
 
 ## Overview
 
-TBD
-
-## Features
-
-- Live feed
-- AI summary generated with every new post
+A React web app that renders an articles feed and an AI summary of recent news. A scheduled job fetches articles from Currents API and stores them in a MongoDB collection, which the frontend pulls from. Incoming articles are filtered against a source allowlist to cut noise, and newly fetched articles are fed into Google GenAI to generate the summary.
 
 ## Tech Stack
 
@@ -128,6 +125,17 @@ news/
 | `npm run lint` | Lint the codebase |
 | `npm run fix` | Lint and auto-fix |
 
+## Ingestion
+
+Articles aren't fetched through the API on page load. The server exposes a protected refresh endpoint that runs the fetch, filter and store pipeline, then regenerates the AI summary. A scheduled job on [cron-job.org](https://cron-job.org) calls it on an interval (roughly every 15 minutes), passing `REFRESH_SECRET` so the endpoint can reject unauthorised calls.
+
+To trigger it manually:
+
+```bash
+ curl -i -X POST -H "X-Refresh-Secret: <REFRESH_SECRET>" http://localhost:3001/api/refresh         
+```
+
+
 ## Roadmap
 
 Prospective features:
@@ -145,4 +153,4 @@ Features in the backlog:
 Bugs to fix:
 
 - [ ] Loading summary state is wider than ready
-- [ ] 
+ 
