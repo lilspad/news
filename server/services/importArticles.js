@@ -2,7 +2,7 @@ import { Article } from '../models/articles.js';
 import { filterArticles } from './filterArticles.js';
 import { fetchArticles } from './fetchArticles.js';
 
-function sourceFromUrl(url) {
+export function sourceFromUrl(url) {
   try {
     return new URL(url).hostname.replace(/^www\./, '');
   } catch {

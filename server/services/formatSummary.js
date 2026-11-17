@@ -1,3 +1,5 @@
+import { sourceFromUrl } from './importArticles.js';
+
 function stripUnresolvedMarkers(text) {
   // negating `>` so it always stops at the nearest closing marker
   return text.replace(/<_UID_[^>]*_UID_>/g, '');
@@ -10,7 +12,8 @@ export function resolveCitations(text, citations) {
 
   let resolved = text;
   for (const [id, { source, url }] of [...citations]) {
-    resolved = resolved.replaceAll(`<_UID_${id}_UID_>`, `[${source}](${url})`);
+    const display = source ? source : sourceFromUrl(url);
+    resolved = resolved.replaceAll(`<_UID_${id}_UID_>`, `[${display}](${url})`);
   }
 
   return stripUnresolvedMarkers(resolved);
