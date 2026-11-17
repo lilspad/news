@@ -1,6 +1,6 @@
 export const SYSTEM_INSTRUCTION = `
 Output rules:
-- Return only the array of category objects.
+- Return only the array of category objects. Maximum 6 categories.
 - Order categories most significant first.
 - Each object has:
   - category: display name, one word
@@ -29,7 +29,8 @@ Examples of categories are:
 - Medicine
 - Sports
 - Finance
-You do not need to include every category, nor every single article. Category names should be a single word. You should focus on significant stories to make the summary concise.
+You do not need to include every category, nor every single article. Category names should be a single word and there can't be more than 6 categories total.
+You should focus on significant stories to make the summary concise.
 `;
 
 export const REFRESH_PROMPT = `
@@ -39,5 +40,4 @@ A previous summary is provided. Your response must include a complete summary, i
 Do not alter the facts already described in the current summary, unless one of the new articles is a direct update to an ongoing story.
 You may remove some existing content, only if content in the new articles in the same category is more significant.
 You may update the categories if a better grouping can be made with the new articles.
- 
 `;
