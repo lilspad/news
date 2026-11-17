@@ -152,5 +152,5 @@ Features in the backlog:
 
 Bugs to fix:
 
-- [ ] Loading summary state is wider than ready
+- [x] Loading summary state is wider than ready
  

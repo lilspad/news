@@ -15,21 +15,23 @@ export function Summary ({ summary, status }: SummaryProps) {
 
   if ( status === 'loading' ) {
     return (
-      <div className={styles['summary--skeleton']}>
-        <div className={styles['summary--label-container']}>
-          <Sparkles />
-          <span className={styles['summary--label']}>
-            AI summary
-          </span>
-        </div>
-        <h2>Here's what happened today, in a nutshell.</h2>
-        <div className={styles['summary--text']}>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
+      <div className={styles['summary--container']}>
+        <div className={styles['summary--skeleton']}>
+          <div className={styles['summary--label-container']}>
+            <Sparkles />
+            <span className={styles['summary--label']}>
+              AI summary
+            </span>
+          </div>
+          <h2>Here's what happened today, in a nutshell.</h2>
+          <div className={styles['summary--text']}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     );
@@ -37,11 +39,13 @@ export function Summary ({ summary, status }: SummaryProps) {
 
   if (status === 'error' || !summary) {
     return (
-      <div className={styles['summary--error']}>
-        <div className={styles['summary--icon']}>
-          <Newsletter />
+      <div className={styles['summary--container']}>
+        <div className={styles['summary--error']}>
+          <div className={styles['summary--icon']}>
+            <Newsletter />
+          </div>
+          <h2>Something went wrong.</h2>
         </div>
-        <h2>Something went wrong.</h2>
       </div>
     );
   }
